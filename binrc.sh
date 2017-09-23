@@ -14,6 +14,11 @@ alias xop=xdg-open
 # Go script
 alias gor=go run
 
+# Clipboard
+alias setclip="xclip -selection c"
+alias getclip="xclip -selection c -o"
+
+
 function myip () {
 	curl ifconfig.me
 }
