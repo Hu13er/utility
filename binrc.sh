@@ -1,5 +1,5 @@
-# My Custom RC
-# source this file in `.bashrc'
+# My Custom RC:
+# 
 
 # VIM
 alias vim=nvim
@@ -14,4 +14,15 @@ alias xop=xdg-open
 # Go script
 alias gor=go run
 
+function myip () {
+	curl ifconfig.me
+}
+
+function newtorip () {
+	echo -e 'AUTHENTICATE ""\r\nsignal NEWNYM\r\nQUIT' | nc 127.0.0.1 9051
+}
+
+function start_cmus () {
+	cmus --listen 0.0.0.0:1212
+}
 
