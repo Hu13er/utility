@@ -1,0 +1,22 @@
+#!/bin/bash
+# Go script
+# Insert "#!/<GOS_PATH>" on first line of your script.
+GOS_DIR='/tmp/gos'
+mkdir -p $GOS_DIR
+
+OUT_ARGS=""
+
+for FILE in $@; do
+	FILE=${FILE##*/}
+	cp $FILE "$GOS_DIR/$FILE"
+	sed -e '1d' "$GOS_DIR/$FILE" > "$GOS_DIR/G$FILE"
+	OUT_ARGS="$OUT_ARGS $GOS_DIR/G$FILE"
+done
+
+go run $OUT_ARGS
+STATUS=$?
+
+rm -rf $GOS_DIR
+
+exit $STATUS
+
