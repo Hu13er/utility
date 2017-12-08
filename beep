@@ -1,0 +1,5 @@
+speaker-test -t sine -f $1 > /dev/null & 
+pid=$!
+sleep 0.08s
+kill -9 $pid
+
