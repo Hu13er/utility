@@ -176,7 +176,8 @@ bindsym XF86AudioNext exec cmus-remote --next
 bindsym XF86AudioPrev exec cmus-remote --prev
 
 
-exec --no-startup-id feh --bg-scale ~/wallpaper/wallpaper1.png
+exec --no-startup-id feh --bg-scale ~/wallpaper/dark.jpg
+exec --no-startup-id conky -c ~/.config/conky/conky.conf
 # exec --no-startup-id conky
 
 # Startup windows:
@@ -185,6 +186,8 @@ exec --no-startup-id exec 'sleep 0.05'
 exec --no-startup-id i3-msg 'workspace 10:Music; exec gnome-terminal -e /usr/bin/cmus; split v;'
 exec --no-startup-id exec 'sleep 0.05'
 exec --no-startup-id i3-msg 'workspace 1; exec gnome-terminal; split h'
+exec --no-startup-id setxkbmap -model pc104 -layout us,ir -option grp:alt_shift_toggle
+
 
 # Language:
 exec --no-startup-id "setxkbmap -model pc105 -layout us,ir -option grp:alt_shift_toggle"
