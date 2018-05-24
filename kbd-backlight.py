@@ -12,7 +12,7 @@ def get_keyboard_backlight():
 
 def set_keyboard_backlight(value):
     with open(MAGIC_FILE_ADDR, 'w') as f:
-        f.write(value)
+        f.write(str(value))
 
 if __name__ == "__main__":
     if len(sys.argv) <= 1:

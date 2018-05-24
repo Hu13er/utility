@@ -10,9 +10,7 @@
 # in the 'general' section.
 # Then, in your ~/.i3/config, use:
 #     status_command i3status | ~/i3status/contrib/wrapper.py
-# In the 'bar' section.
-#
-# In its current version it will display the cpu frequency governor, but you
+# In the 'bar' section.  In its current version it will display the cpu frequency governor, but you
 # are free to change it to display whatever you like, see the comment in the
 # source code below.
 #
@@ -78,10 +76,12 @@ if __name__ == '__main__':
         j = json.loads(line)
         # insert information into the start of the json, but could be anywhere
         # CHANGE THIS LINE TO INSERT SOMETHING ELSE
-        lVol, rVol = get_volume(left_bool=True), get_volume(left_bool=False)
-        j.insert(0, {'full_text': 'VOL: %s, %s' % (lVol, rVol) if lVol != rVol else 'VOL: %s' % lVol, 'name': 'vol'})
+        #lVol, rVol = get_volume(left_bool=True), get_volume(left_bool=False)
+
+        #j.insert(0, {'full_text': 'VOL: %s, %s' % (lVol, rVol) if lVol != rVol else 'VOL: %s' % lVol, 'name': 'vol'})
 
         j.insert(0, {'full_text': "BRT: " + str(get_brightness()) + "%", 'name': 'brt'})
+
 
         # and echo back new encoded json
         print_line(prefix+json.dumps(j))

@@ -1,0 +1,6 @@
+#!/bin/bash
+while [ 1 == 1 ]; do
+	printf "$(sh -c \'$@\')\r"
+	sleep 0.5
+done
+
