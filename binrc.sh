@@ -18,6 +18,7 @@ alias gor=go run
 alias setclip="xclip -selection c"
 alias getclip="xclip -selection c -o"
 
+
 function myip () {
 	curl ifconfig.me
 }
@@ -36,8 +37,9 @@ function cdualm () {
 }
 
 function dualm () {
-    DX=$( echo "1920 * $1 / 1" | bc )
-    DY=$( echo "1080 * $1 / 1" | bc )
+    RES=( $( xrandr -q | grep -oP '\d+x\d+.*\*' | tail -n 1 | tr 'x' ' ' ) )
+    DX=$( echo "$RES[1] * $1 / 1" | bc )
+    DY=$( echo "$RES[2] * $1 / 1" | bc )
 
     PADDING="${DX}x${DY}+2560+0"
     SCALE="${1}x${1}"
